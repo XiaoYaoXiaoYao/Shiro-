@@ -1,0 +1,29 @@
+
+#配置Druid的数据源
+spring :
+  datasource:
+    name : vue_jf
+    url : jdbc:mysql://localhost:3306/shiro_db?useSSL=false&serverTimezone=UTC
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+
+    # 模板引擎
+  thymeleaf:
+    mode: HTML
+    encoding: utf-8
+    # 禁用缓存
+    cache: false
+
+mybatis:
+  mapper-locations: classpath*:mapper/*Mapper.xml
+
+shiro:
+  successUrl: /
+  loginUrl: /login
+logging:
+  level:
+    cn.xiaoyao: debug
+    org.springframework: warn
+

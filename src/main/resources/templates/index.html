@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<head>
+    <meta charset="UTF-8">
+    <title>标题</title>
+</head>
+<body>
+<h2>主页</h2>
+
+
+    <a href="/user/logout">退出</a> <br>
+
+    <span shiro:hasRole="admin">
+        <a href="/user/add">用户增加</a><br>
+    </span>
+
+    <span shiro:hasAnyRoles="user,admin,1" >
+        <a href="/user/delete">用户删除</a><br>
+    </span>
+
+    <a href="/user/update">用户修改</a><br>
+
+    <span shiro:hasPermission="system:user:find">
+        <a href="/user/find">用户查询</a><br>
+    </span>
+
+</body>
+</html>
